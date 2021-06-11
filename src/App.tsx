@@ -1,10 +1,14 @@
 import React from 'react';
+import Accordion from './components/Accordion/Accordion';
+import Rating from './components/Rating/Rating';
+
 
 function App() {
     return (
         <div>
-            This is APP component
+            <AppTitle/>
             <Rating/>
+            <Accordion/>
         </div>
     );
 }
@@ -12,28 +16,12 @@ function App() {
 export default App;
 
 
-const Rating = () => {
+const AppTitle = () => {
     return (
-        <div>
-            <div> start</div>
-            <div> start</div>
-            <div> start</div>
-            <div> start</div>
-            <div> start</div>
-        </div>
-    );
-};
+        <>
+            This is APP component
+        </>
+    )
+}
 
-const Accordion = () => {
-    return (
-        <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    );
-};
 
