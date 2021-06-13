@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 type AccordionPropsType = {
     titleValue: string
-    collapsed: boolean
 }
 
 type AccordionTitle = {
@@ -13,10 +12,22 @@ type AccordionTitle = {
 
 const Accordion = (props: AccordionPropsType) => {
 
+    const [collapsed, setCollapsed] = useState<boolean>(true)
+
+    const collapseHandler = () => {
+        if(collapsed === true) {
+            setCollapsed(false)
+        } else {
+            setCollapsed(true)
+        }
+
+    }
+
     return (
         <div>
+            <button onClick={collapseHandler}>Toggle</button>
             <AccordionTitle titleValue={props.titleValue}/>
-            {!props.collapsed && <AccordionBody/>}
+            {!collapsed && <AccordionBody/>}
         </div>
     );
 };

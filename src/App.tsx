@@ -7,11 +7,11 @@ import OnOff from './components/OnOff/OnOff';
 function App() {
     return (
         <div>
-            {/*<AppTitle/>*/}
-            {/*<Rating value = {2}/>*/}
-            {/*<Accordion titleValue = {'Menu'} collapsed = {false}/>*/}
-            {/*<Accordion titleValue = {'Users'} collapsed = {true}/>*/}
+            <AppTitle/>
+            <Accordion titleValue={'Menu'}/>
+            <Accordion titleValue={'Users'}/>
             <OnOff/>
+            <Rating/>
         </div>
     );
 }
