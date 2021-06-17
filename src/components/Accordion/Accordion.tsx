@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 
 type AccordionPropsType = {
     titleValue: string
-    accordionCollapsed: boolean
-    onClick: (accordionCollapsed: boolean) => void
+    collapsed: boolean
+    onChange: () => void
 }
 
 
@@ -13,8 +13,8 @@ const Accordion = (props: AccordionPropsType) => {
 
     return (
         <div>
-            <AccordionTitle titleValue={props.titleValue} setCollapsed={() => props.onClick(!props.accordionCollapsed)}/>
-            {!props.accordionCollapsed && <AccordionBody/>}
+            <AccordionTitle titleValue={props.titleValue} setCollapsed={props.onChange}/>
+            {!props.collapsed && <AccordionBody/>}
         </div>
     );
 };
