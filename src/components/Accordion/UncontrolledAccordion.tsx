@@ -3,18 +3,18 @@ import React, {useState} from 'react';
 
 type AccordionPropsType = {
     titleValue: string
-    accordionCollapsed: boolean
-    onClick: (accordionCollapsed: boolean) => void
 }
 
 
 
-const Accordion = (props: AccordionPropsType) => {
+const UncontrolledAccordion = (props: AccordionPropsType) => {
+
+    const [collapsed, setCollapsed] = useState<boolean>(false)
 
     return (
         <div>
-            <AccordionTitle titleValue={props.titleValue} setCollapsed={() => props.onClick(!props.accordionCollapsed)}/>
-            {!props.accordionCollapsed && <AccordionBody/>}
+            <AccordionTitle titleValue={props.titleValue} setCollapsed={() => setCollapsed(!collapsed)}/>
+            {!collapsed && <AccordionBody/>}
         </div>
     );
 };
@@ -44,4 +44,4 @@ const AccordionBody = () => {
 }
 
 
-export default Accordion
+export default UncontrolledAccordion
